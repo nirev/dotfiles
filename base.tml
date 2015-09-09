@@ -1,0 +1,29 @@
+[macros.install]
+    prefix = ["brew", "install"]
+
+[macros.install-app]
+    prefix = ["brew", "cask", "install"]
+
+[tasks.update-defs]
+    cmds = [
+        ["brew", "update"],
+        ["brew", "cask", "update"],
+    ]
+
+[tasks.default]
+    deps = ["update-defs"]
+    links = [
+        [".bash_profile"]
+    ]
+    cmds = [
+        ["@install-app", 
+            "iterm2",
+            "spectacle",
+            "dropbox",
+            "caskroom/versions/sublime-text3"
+        ],
+        ["@install",
+            "git",
+        ]
+    ]
+

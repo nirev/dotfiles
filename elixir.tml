@@ -1,0 +1,34 @@
+[macros.install]
+    prefix = ["brew", "install"]
+
+[tasks.update-defs]
+    cmds = [
+        ["brew", "update"],
+        ["brew", "cask", "update"],
+    ]
+
+[tasks.base]
+    cmds = [
+        ["@install",
+            "erlang",    
+            "elixir",
+            "node",
+            "postgresql",
+        ],
+        ["ln", "-sfv", "/usr/local/opt/postgresql/homebrew.mxcl.postgresql.plist", "${HOME}/Library/LaunchAgents"],
+    ]
+
+[tasks.phoenix]
+    cmds = [
+        ["mix", "local.hex", "--force"],
+        ["mix", "archive.install", "--force", "https://github.com/phoenixframework/phoenix/releases/download/v1.0.2/phoenix_new-1.0.2.ez"],
+    ]
+
+# entrypoint
+[tasks.default]
+    deps = [
+        "update-defs", 
+        "base",
+        "phoenix",
+    ]
+
