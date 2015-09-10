@@ -1,0 +1,33 @@
+[user]
+    name = Guilherme M. Nogueira
+    email = guilherme@nirev.org
+[color]
+    ui = true
+    diff = auto
+    status = auto
+    branch = auto
+[push]
+    default = simple
+
+[alias]
+    st = status
+    ci = commit
+    co = checkout
+    b = branch -a
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an, %cr)%Creset' --abbrev-commit --date=relative
+    fo = fetch origin
+    fom = fetch origin master
+    pom = pull origin master
+    fupum =!git checkout master && git fom && git pom
+    rebasemaster = !branch=\"`git branch 2>/dev/null | grep \\* | awk '{ print $2 }'`\" && echo \"Rebasing $branch from master...\" && git fupum && git co $branch && git rebase master
+    cob = !git fo && git co -b $1 origin/$1 && echo \"Checked out origin branch:\"
+
+[mergetool "p4merge"]
+  cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+  keepTemporaries = false
+  trustExitCode = false
+  keepBackup = false
+
+[merge]
+  tool = p4merge
+

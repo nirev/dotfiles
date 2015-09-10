@@ -13,7 +13,8 @@
 [tasks.default]
     deps = ["update-defs"]
     links = [
-        [".bash_profile"]
+        [".bash_profile"],
+        [".gitconfig"],
     ]
     cmds = [
         ["@install-app", 
