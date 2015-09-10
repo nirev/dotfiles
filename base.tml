@@ -20,10 +20,27 @@
             "iterm2",
             "spectacle",
             "dropbox",
-            "caskroom/versions/sublime-text3"
+            "caskroom/versions/sublime-text3",
+            "dash",
+            "spotify",
+            "vagrant",
+            "itsycal",
+            "jumpcut",
+            "p4merge",
+            "virtualbox",
         ],
         ["@install",
             "git",
+            "docker",
+            "docker-machine",
+            "jq",
+            "htop-osx",
+            "imagemagick",
+            "pgcli",
+            "the_silver_searcher",
+            "tree",
+            "unrar",
+            "wget",
         ]
     ]
 
