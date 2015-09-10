@@ -1,1 +1,3 @@
-#dotfiles using Homemaker
+# dotfiles
+
+Using [https://github.com/FooSoft/homemaker]
