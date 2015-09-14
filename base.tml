@@ -1,7 +1,7 @@
 [macros.install]
     prefix = ["brew", "install"]
 
-[macros.install-app]
+[macros.cask-install]
     prefix = ["brew", "cask", "install"]
 
 [tasks.update-defs]
@@ -10,18 +10,25 @@
         ["brew", "cask", "update"],
     ]
 
+[tasks.fonts]
+    cmds = [
+        ["brew", "tap", "caskroom/fonts"],
+        ["@cask-install", "font-hack"],
+    ]
+
 [tasks.default]
-    deps = ["update-defs"]
+    deps = ["update-defs", "fonts"]
     links = [
         [".bash_profile"],
         [".gitconfig"],
     ]
     cmds = [
-        ["@install-app", 
+        ["@cask-install", 
             "iterm2",
             "spectacle",
             "dropbox",
             "caskroom/versions/sublime-text3",
+            "atom",
             "dash",
             "spotify",
             "vagrant",
@@ -29,6 +36,7 @@
             "jumpcut",
             "p4merge",
             "virtualbox",
+            "slack",
         ],
         ["@install",
             "git",
