@@ -50,6 +50,7 @@
             "tree",
             "unrar",
             "wget",
+            "bash-completion",
         ]
     ]
 
