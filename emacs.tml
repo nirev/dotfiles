@@ -1,0 +1,30 @@
+[macros.install]
+    prefix = ["brew", "install"]
+[macros.tap]
+    prefix = ["brew", "tap"]
+
+[tasks.update-defs]
+    cmds = [
+        ["brew", "update"],
+        ["brew", "cask", "update"],
+    ]
+
+
+[tasks.emacs__osx]
+    cmds = [
+	["@tap", "railwaycat/emacsmacport"],
+	["@install", "emacs-mac", "--with-spacemacs-icon"],
+    ]
+
+[tasks.spacemacs]
+    cmds = [
+	["git", "clone", "--recursive", "https://github.com/syl20bnr/spacemacs", "${HM_DEST}/.emacs.d"],
+    ]
+
+# entrypoint
+[tasks.default]
+    deps = [
+        "emacs",
+        "spacemacs",
+    ]
+
