@@ -20,6 +20,8 @@
     deps = ["update-defs", "fonts"]
     links = [
         [".bash_profile"],
+        [".bash_profile_osx"],
+        [".bash_aliases"],
         [".gitconfig"],
     ]
     cmds = [
