@@ -17,6 +17,9 @@
     ]
 
 [tasks.spacemacs]
+    links = [
+        [".spacemacs"],
+    ]
     cmds = [
 	["git", "clone", "--recursive", "https://github.com/syl20bnr/spacemacs", "${HM_DEST}/.emacs.d"],
     ]
