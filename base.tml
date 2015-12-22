@@ -23,6 +23,7 @@
         [".bash_profile_osx"],
         [".bash_aliases"],
         [".gitconfig"],
+        [".gitignore_global"],
     ]
     cmds = [
         ["@cask-install", 

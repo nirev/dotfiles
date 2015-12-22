@@ -31,3 +31,5 @@
 [merge]
   tool = p4merge
 
+[core]
+  excludesfile = ~/.gitignore_global
