@@ -226,4 +226,6 @@ elif [ -f /etc/bash_completion ]; then
   source /etc/bash_completion;
 fi;
 
+export PATH="$PATH:~/bin"
+
 alias recreate-phoenix-db="mix ecto.drop && mix ecto.create && mix ecto.migrate && mix run priv/repo/seeds.exs"

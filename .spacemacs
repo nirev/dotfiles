@@ -32,7 +32,6 @@ values."
      markdown
      syntax-checking
      auto-completion
-     company-mode
      erlang
      elixir
      git
@@ -41,9 +40,11 @@ values."
      html
      org
      colors
-     editorconfig
      themes-megapack
      perspectives
+     clojure
+     ansible
+     terraform
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -95,8 +96,8 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 14
+   dotspacemacs-default-font '("Panic Sans"
+                               :size 17
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -140,7 +141,7 @@ values."
    dotspacemacs-enable-paste-micro-state nil
    ;; Which-key delay in seconds. The which-key buffer is the popup listing
    ;; the commands bound to the current keystroke sequence. (default 0.4)
-   dotspacemacs-which-key-delay 0.4
+   dotspacemacs-which-key-delay 0.3
    ;; Which-key frame position. Possible values are `right', `bottom' and
    ;; `right-then-bottom'. right-then-bottom tries to display the frame to the
    ;; right; if there is insufficient space it displays it at the bottom.
@@ -159,7 +160,7 @@ values."
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
@@ -210,46 +211,61 @@ user code."
 layers configuration. You are free to put any user code."
   (add-hook 'prog-mode-hook 'linum-mode)
 
-    ;;
-    ;;; Jumping between projects
-    ;;
-    (defvar rr/project-sources '("~/dev"))
+  (setq powerline-default-separator 'arrow)
 
-    (defvar rr/default-file-regexps
+  ;;
+  ;;; Jumping between projects
+  ;;
+  (defvar rr/project-sources '("~/dev"))
+
+  (defvar rr/default-file-regexps
         '("Gemfile$"
             "mix.exs$"
             "Readme"
             "README"))
 
-    (defun rr/helm-open-project ()
+  (defun rr/helm-open-project ()
         "Bring up a Project search interface in helm."
         (interactive)
         (helm :sources '(rr/helm-open-project--source)
               :buffer "*helm-list-projects*"))
 
-    (defvar rr/helm-open-project--source
+  (defvar rr/helm-open-project--source
         '((name . "Open Project")
             (delayed)
             (candidates . rr/list-projects)
             (action . rr/open-project)))
 
-    (defun rr/list-projects ()
+  (defun rr/list-projects ()
         "Lists all projects given project sources."
         (->> rr/project-sources
             (-filter 'file-exists-p)
             (-mapcat (lambda (dir) (directory-files dir t directory-files-no-dot-files-regexp)))))
 
-    (defun rr/open-project (path)
+  (defun rr/open-project (path)
         "Open project available at PATH."
         (let* ((candidates (-mapcat (lambda (d) (directory-files path t d)) rr/default-file-regexps))
                 (elected (car candidates)))
             (find-file (or elected path))))
 
-    (define-key projectile-mode-map (kbd "C-c p p") 'rr/helm-open-project)
-    (define-key projectile-mode-map (kbd "C-c p f") 'helm-projectile)
+  (define-key projectile-mode-map (kbd "C-c p p") 'rr/helm-open-project)
+  (define-key projectile-mode-map (kbd "C-c p f") 'helm-projectile)
 
-    (define-key evil-emacs-state-map [escape] nil)
+  (define-key evil-emacs-state-map [escape] nil)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(magit-branch-arguments nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
