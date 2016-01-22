@@ -33,7 +33,12 @@ alias wine="LIBGL_DRIVERS_PATH=/usr/lib32/xorg/modules/dri wine"
 
 alias cleandir="rm *~"
 
-alias vpn="sudo openvpn --config /etc/openvpn/bytesized.conf"
+
+# NINFA
+alias phoenixnow="ssh -X -Y gmnogueira@phoenix.inf.ufes.br"
+alias ninfaproxy="ssh -D 4099 -Nf gmnogueira@phoenix.inf.ufes.br"
+alias ufesproxy="ssh -D 4099 -Nf gmnogueira@di.inf.ufes.br"
+
 
 
 ############################
@@ -190,6 +195,10 @@ export GIT_COMMITTER_NAME=$GIT_AUTHOR_NAME
 #export WINEARCH=win32
 #export FRASCATI_HOME=/home/nirev/apps/frascati-runtime-1.4
 
+# chruby: changes rubies
+# auto: switch ruby version when "cd"ing to a dir containing a .ruby-version file
+#source /usr/share/chruby/chruby.sh
+#source /usr/share/chruby/auto.sh
 
 if [ "$(uname)" == "Darwin" ]; then
     # Do something under Mac OS X platform
