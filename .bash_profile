@@ -228,4 +228,4 @@ fi;
 
 export PATH="$PATH:~/bin"
 
-alias recreate-phoenix-db="mix ecto.drop && mix ecto.create && mix ecto.migrate && mix run priv/repo/seeds.exs"
+alias recreate-phoenix-db="mix ecto.drop && mix ecto.create && mix ecto.migrate && mix run priv/repo/seeds.exs && mix run priv/repo/seeds/cities.exs && mix run priv/repo/seeds/cbos.exs && mix run priv/repo/seeds/banks.exs"
