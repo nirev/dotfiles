@@ -100,7 +100,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Panic Sans"
-                               :size 17
+                               :size 16
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -251,6 +251,7 @@ layers configuration. You are free to put any user code."
                 (elected (car candidates)))
             (find-file (or elected path))))
 
+  (require 'projectile)
   (define-key projectile-mode-map (kbd "C-c p p") 'rr/helm-open-project)
   (define-key projectile-mode-map (kbd "C-c p f") 'helm-projectile)
 
