@@ -265,7 +265,8 @@ layers configuration. You are free to put any user code."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(magit-branch-arguments nil))
+ '(magit-branch-arguments nil)
+ '(safe-local-variable-values (quote ((ag-ignore-list "priv/static/**" "vendor/**")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
