@@ -222,7 +222,8 @@ layers configuration. You are free to put any user code."
   ;;
   ;;; Jumping between projects
   ;;
-  (defvar rr/project-sources '("~/dev"))
+  (defvar rr/project-sources '("~/dev"
+                               "~/work/xerpa"))
 
   (defvar rr/default-file-regexps
         '("Gemfile$"
@@ -269,7 +270,10 @@ layers configuration. You are free to put any user code."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(magit-branch-arguments nil)
- '(safe-local-variable-values (quote ((ag-ignore-list "priv/static/**" "vendor/**")))))
+ '(safe-local-variable-values
+   (quote
+    ((ag-ignore-list "priv/static/**" "vendor/**" "node_modules/**")
+     (ag-ignore-list "priv/static/**" "vendor/**")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
