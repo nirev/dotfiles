@@ -1,6 +1,8 @@
 
 # tv series helper :D
-alias legendas="for i in *.rar; do unrar x -y $i; rm $i; done"
+function legendas {
+  for i in *.rar; do unrar x -y $i; rm $i; done
+}
 alias lowercaseEverything='for f in *; do mv "$f" "`echo $f | tr "[:upper:]" "[:lower:]"`"; done'
 
 # tar aliases
