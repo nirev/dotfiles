@@ -30,15 +30,12 @@ values."
      ;; version-control
      emacs-lisp
      markdown
-     syntax-checking
      auto-completion
      erlang
      elixir
      git
-     dash
      osx
      html
-     org
      colors
      themes-megapack
      perspectives
@@ -53,6 +50,7 @@ values."
    dotspacemacs-additional-packages
    '(
      ag
+     restclient
    )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
@@ -100,7 +98,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Panic Sans"
-                               :size 16
+                               :size 17
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -258,6 +256,8 @@ layers configuration. You are free to put any user code."
   (require 'projectile)
   (define-key projectile-mode-map (kbd "C-c p p") 'rr/helm-open-project)
   (define-key projectile-mode-map (kbd "C-c p f") 'helm-projectile)
+  (define-key smartparens-mode-map (kbd "C-<right>") 'sp-slurp-hybrid-sexp)
+  (define-key smartparens-mode-map (kbd "C-<left>") 'sp-forward-barf-sexp)
 
   (define-key evil-emacs-state-map [escape] nil)
 )
