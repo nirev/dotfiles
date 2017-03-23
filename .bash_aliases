@@ -10,7 +10,7 @@ alias tarx='tar -xvzf'
 alias tarc='tar -cvzf'
 
 # ls aliases
-alias ls='ls -G'
+alias ls='ls --color'
 alias ll='ls -lh'
 alias la='ls -a'
 alias lla='ls -la'
@@ -18,6 +18,8 @@ alias lla='ls -la'
 alias cgrep='grep --color'
 
 alias howmuch="du -h --max-depth=1"
+
+alias rehash="source ~/.bash_profile"
 
 alias screenturnoff="sleep 2; xset dpms force off"
 

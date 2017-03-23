@@ -1,0 +1,2 @@
+eval $(keychain --eval --noask --nogui --quiet id_rsa ~/sec/keys/id_rsa)
+
