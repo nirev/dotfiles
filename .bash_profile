@@ -1,8 +1,3 @@
-############################
-# Aliases
-############################
-
-source ~/.bash_aliases
 
 ############################
 # Colored output
@@ -182,16 +177,18 @@ shopt -s histappend;
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
 
-# Add tab completion for many Bash commands
-if which brew &> /dev/null && [ -f "$(brew --prefix)/etc/bash_completion" ]; then
-  source $(brew --prefix)/etc/bash_completion;
-fi
 
 if [ -r /usr/share/bash-completion ]; then
   source /usr/share/bash-completion/bash_completion;
 fi;
 
-export PATH="$PATH:$HOME/bin"
+export PATH="$HOME/bin:$PATH"
 export PATH="$PATH:$HOME/.local/bin"
 
-alias recreate-phoenix-db="mix ecto.drop && mix ecto.create && mix ecto.migrate && mix run priv/repo/seeds.exs && mix run priv/repo/seeds/cities.exs && mix run priv/repo/seeds/cbos.exs && mix run priv/repo/seeds/banks.exs"
+
+############################
+# Aliases
+############################
+
+source ~/.bash_aliases
+
