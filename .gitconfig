@@ -1,6 +1,7 @@
 [user]
     name = Guilherme M. Nogueira
     email = guilherme@nirev.org
+    signingkey = AC023332E886B2A6
 [color]
     ui = true
     diff = auto
@@ -33,3 +34,5 @@
 
 [core]
   excludesfile = ~/.gitignore_global
+[commit]
+  gpgsign = true
