@@ -8,6 +8,10 @@ if [ -f /usr/local/opt/chruby/share/chruby/chruby.sh ]; then
   source /usr/local/opt/chruby/share/chruby/chruby.sh
 fi
 
+if [ -f /usr/local/opt/asdf/asdf.sh ]; then
+  source /usr/local/opt/asdf/asdf.sh
+fi
+
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
