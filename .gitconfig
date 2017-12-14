@@ -22,6 +22,7 @@
     fupum =!git checkout master && git fom && git pom
     rebasemaster = !branch=\"`git branch 2>/dev/null | grep \\* | awk '{ print $2 }'`\" && echo \"Rebasing $branch from master...\" && git fupum && git co $branch && git rebase master
     cob = !git fo && git co -b $1 origin/$1 && echo \"Checked out origin branch:\"
+    next = !git tag --points-at | sed 's/step//' | awk '{print \"step\"$1+1}' | xargs git co && git log -1 --no-decorate || echo "already at last step"
 
 [mergetool "p4merge"]
   cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
