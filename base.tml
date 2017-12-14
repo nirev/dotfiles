@@ -7,7 +7,6 @@
 [tasks.update-defs]
     cmds = [
         ["brew", "update"],
-        ["brew", "cask", "update"],
     ]
 
 [tasks.fonts]
@@ -18,35 +17,22 @@
         ["@cask-install", "font-fira-mono-for-powerline"],
     ]
 
-[tasks.default]
-    deps = ["update-defs", "fonts"]
-    links = [
-        [".bash_profile"],
-        [".bash_profile_osx"],
-        [".bash_aliases"],
-        [".gitconfig"],
-        [".gitignore_global"],
-    ]
+[tasks.bootstrap]
+    deps = ["default", "update-defs", "fonts"]
     cmds = [
         ["@cask-install", 
             "iterm2",
             "spectacle",
             "dropbox",
-            "caskroom/versions/sublime-text3",
-            "atom",
             "dash",
-            "spotify",
             "vagrant",
             "itsycal",
             "jumpcut",
-            "p4merge",
             "virtualbox",
             "slack",
         ],
         ["@install",
             "git",
-            "docker",
-            "docker-machine",
             "jq",
             "htop-osx",
             "imagemagick",
@@ -56,9 +42,18 @@
             "unrar",
             "wget",
             "bash-completion",
-            "socat",
             "chruby",
             "ruby-install",
         ]
     ]
+
+[tasks.default]
+    links = [
+        [".bash_profile"],
+        [".bash_profile_osx"],
+        [".bash_aliases"],
+        [".gitconfig"],
+        [".gitignore_global"],
+    ]
+
 
