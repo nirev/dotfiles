@@ -184,6 +184,9 @@ if [ -r /usr/share/bash-completion ]; then
   source /usr/share/bash-completion/bash_completion;
 fi;
 
+# enable shell history for iex
+export ERL_AFLAGS="-kernel shell_history enabled"
+
 export PATH="$HOME/bin:$PATH"
 export PATH="$PATH:$HOME/.local/bin"
 
