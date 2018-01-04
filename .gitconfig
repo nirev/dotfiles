@@ -24,15 +24,6 @@
     cob = !git fo && git co -b $1 origin/$1 && echo \"Checked out origin branch:\"
     next = !git tag --points-at | sed 's/step//' | awk '{print \"step\"$1+1}' | xargs git co && git log -1 --no-decorate || echo "already at last step"
 
-[mergetool "p4merge"]
-  cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
-  keepTemporaries = false
-  trustExitCode = false
-  keepBackup = false
-
-[merge]
-  tool = p4merge
-
 [core]
   excludesfile = ~/.gitignore_global
 [commit]
