@@ -19,3 +19,4 @@ alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall 
 
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
+export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
