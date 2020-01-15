@@ -16,10 +16,12 @@ PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
-
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
 alias hideDesktopIcons='defaults write com.apple.finder CreateDesktop false; killall Finder'
 alias showDesktopIcons='defaults write com.apple.finder CreateDesktop true; killall Finder'
 
 export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
+
+# Add Visual Studio Code (code)
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
