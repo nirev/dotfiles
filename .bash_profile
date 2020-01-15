@@ -155,11 +155,6 @@ export GIT_COMMITTER_NAME=$GIT_AUTHOR_NAME
 #export WINEARCH=win32
 #export FRASCATI_HOME=/home/nirev/apps/frascati-runtime-1.4
 
-# chruby: changes rubies
-# auto: switch ruby version when "cd"ing to a dir containing a .ruby-version file
-#source /usr/share/chruby/chruby.sh
-#source /usr/share/chruby/auto.sh
-
 if [ "$(uname)" == "Darwin" ]; then
     # Do something under Mac OS X platform
     source ~/.bash_profile_osx

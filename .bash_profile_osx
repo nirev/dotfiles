@@ -1,11 +1,5 @@
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
-
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   source $(brew --prefix)/etc/bash_completion
-fi
-
-if [ -f /usr/local/opt/chruby/share/chruby/chruby.sh ]; then
-  source /usr/local/opt/chruby/share/chruby/chruby.sh
 fi
 
 if [ -f /usr/local/opt/asdf/asdf.sh ]; then
