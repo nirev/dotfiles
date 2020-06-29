@@ -185,6 +185,8 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 export PATH="$HOME/bin:$PATH"
 export PATH="$PATH:$HOME/.local/bin"
 
+source $HOME/.asdf/asdf.sh
+source $HOME/.asdf/completions/asdf.bash
 
 ############################
 # Aliases
