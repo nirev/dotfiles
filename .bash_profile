@@ -131,6 +131,12 @@ extract () {
     fi
 }
 
+function pdf.like_scanned () {
+    OUT=$(basename "$1" .pdf)
+    convert -density 150 "$1" -rotate "$([ $((RANDOM % 2)) -eq 1 ] && echo -)0.$(($RANDOM % 4 + 5))" \
+            -attenuate 0.4 +noise Multiplicative -attenuate 0.03 +noise Multiplicative -sharpen 0x1.0 \
+            -colorspace Gray "$OUT"_scanned.pdf
+}
 
 ############################
 # Misc
