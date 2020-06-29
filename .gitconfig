@@ -1,3 +1,5 @@
+[include]
+    path = gitconfig.secrets
 [user]
     name = Guilherme M. Nogueira
     email = guilherme@nirev.org
@@ -25,6 +27,6 @@
     next = !git tag --points-at | sed 's/step//' | awk '{print \"step\"$1+1}' | xargs git co && git log -1 --no-decorate || echo "already at last step"
 
 [core]
-  excludesfile = ~/.gitignore_global
+    excludesfile = ~/.gitignore_global
 [commit]
-  gpgsign = true
+    gpgsign = true
