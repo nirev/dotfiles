@@ -16,8 +16,8 @@ alias colorgrep="grep --color -Tn"
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
 export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'                           
-export LESS_TERMCAP_so=$'\E[01;44;33m'                                 
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
@@ -36,8 +36,8 @@ function pre_prompt {
         let promptsize=$(echo -n "--(xx:dd)---(${PWD})---" | wc -c | tr -d " ")
 	let fillsize=${COLUMNS}-${promptsize}
 	fill=""
-	while [ "$fillsize" -gt "0" ] 
-	do 
+	while [ "$fillsize" -gt "0" ]
+	do
 		fill="${fill}─"
 		let fillsize=${fillsize}-1
 	done
@@ -141,7 +141,7 @@ extract () {
 # export ZZPATH=/media/data/home/nirev/bin/funcoeszz
 
 # para o octave
-#export GDFONTPATH=/usr/share/fonts/TTF/    
+#export GDFONTPATH=/usr/share/fonts/TTF/
 
 # para o open office
 #export SAL_GTK_USE_PIXMAPPAINT=1
@@ -193,4 +193,3 @@ source $HOME/.asdf/completions/asdf.bash
 ############################
 
 source ~/.bash_aliases
-
