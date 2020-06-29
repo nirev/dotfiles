@@ -36,6 +36,8 @@ alias phoenixnow="ssh -X -Y gmnogueira@phoenix.inf.ufes.br"
 alias ninfaproxy="ssh -D 4099 -Nf gmnogueira@phoenix.inf.ufes.br"
 alias ufesproxy="ssh -D 4099 -Nf gmnogueira@di.inf.ufes.br"
 
-alias start_all="PGDATA=/home/nirev/dev/pgdata/ ~/dev/lukla/automation/sandbox/bin/start -d redis consul postgres cassandra elasticsearch"
-
 alias gopy="source ~/.pyenv/bin/activate"
+
+function telnyx_git {
+  GITHUB_USER=team-telnyx GITHUB_USER_TYPE=orgs CODE_DIR=~/work/telnyx gitmulticast.sh $@
+}
