@@ -30,3 +30,5 @@
     excludesfile = ~/.gitignore_global
 [commit]
     gpgsign = true
+[pull]
+	ff = only
