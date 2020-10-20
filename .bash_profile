@@ -153,7 +153,7 @@ function pdf.like_scanned () {
 #export SAL_GTK_USE_PIXMAPPAINT=1
 
 export EDITOR=vim
-export GIT_AUTHOR_EMAIL=guilherme@nirev.org
+export GIT_AUTHOR_EMAIL=guilherme@taming-chaos.com
 export GIT_AUTHOR_NAME='nirev'
 export GIT_COMMITTER_EMAIL=$GIT_AUTHOR_EMAIL
 export GIT_COMMITTER_NAME=$GIT_AUTHOR_NAME
@@ -164,6 +164,8 @@ export GIT_COMMITTER_NAME=$GIT_AUTHOR_NAME
 if [ "$(uname)" == "Darwin" ]; then
     # Do something under Mac OS X platform
     source ~/.bash_profile_osx
+else
+		source ~/.bash_profile_linux
 fi
 
 # configure GO
@@ -180,10 +182,6 @@ shopt -s histappend;
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
 
-
-if [ -r /usr/share/bash-completion ]; then
-  source /usr/share/bash-completion/bash_completion;
-fi;
 
 # enable shell history for iex
 export ERL_AFLAGS="-kernel shell_history enabled"

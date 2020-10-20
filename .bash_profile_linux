@@ -1,2 +1,5 @@
 eval $(keychain --eval --noask --nogui --quiet id_rsa ~/sec/keys/id_rsa)
 
+if [ -r /usr/share/bash-completion ]; then
+  source /usr/share/bash-completion/bash_completion;
+fi;
