@@ -187,6 +187,9 @@ fi;
 
 # enable shell history for iex
 export ERL_AFLAGS="-kernel shell_history enabled"
+# build erlang with docs
+export KERL_BUILD_DOCS=yes
+export KERL_DOC_TARGETS=chunks
 
 export PATH="$HOME/bin:$PATH"
 export PATH="$PATH:$HOME/.local/bin"
