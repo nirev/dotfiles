@@ -41,3 +41,7 @@ alias gopy="source ~/.pyenv/bin/activate"
 function telnyx_git {
   GITHUB_USER=team-telnyx GITHUB_USER_TYPE=orgs CODE_DIR=~/work/telnyx gitmulticast.sh $@
 }
+
+function asdf-update {
+  asdf update && asdf plugin-update --all
+}
