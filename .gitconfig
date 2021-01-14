@@ -1,7 +1,7 @@
 [include]
     path = gitconfig.secrets
 [user]
-    name = Guilherme M. Nogueira
+    name = Guilherme de Maio
     email = nirev@taming-chaos.com
     signingkey = 3D6E11B9CAC8B6D9
 [color]
