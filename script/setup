@@ -12,4 +12,4 @@ curl -fsSL https://github.com/FooSoft/homemaker/releases/latest/download/${HOMEM
 SCRIPTPATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DOTFILES_PATH="${SCRIPTPATH}/../"
 
-PATH="~/bin:${PATH}" make -C ${DOTFILES_PATH}
+env PATH="${HOME}/bin:${PATH}" make -C ${DOTFILES_PATH}
