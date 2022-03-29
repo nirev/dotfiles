@@ -4,15 +4,13 @@
 HOMEMAKER_TGZ="homemaker_darwin_amd64.tar.gz"
 
 curl -fsSL https://github.com/FooSoft/homemaker/releases/latest/download/${HOMEMAKER_TGZ} -O && \
-    tar -xvzf ${HOMEMAKER_TGZ} && \
+    tar -xzf ${HOMEMAKER_TGZ} && \
     mkdir -p ~/bin && \
     mv homemaker ~/bin/homemaker && \
     rm -rf ${HOMEMAKER_TGZ}
 
 PATH="~/bin:${PATH}"
-
-SCRIPT=$(realpath -s $0)
-SCRIPTPATH=$(dirname $SCRIPT)
+SCRIPTPATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DOTFILES_PATH="${SCRIPTPATH}/../"
 
 make -C ${DOTFILES_PATH}
