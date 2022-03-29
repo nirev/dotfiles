@@ -3,6 +3,3 @@ all:
 
 elixir:
 	homemaker -verbose elixir.tml .
-
-bootstrap:
-	homemaker -verbose -task bootstrap base.tml .

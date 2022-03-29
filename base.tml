@@ -1,59 +1,12 @@
-[macros.install]
-    prefix = ["brew", "install"]
-
-[macros.cask-install]
-    prefix = ["brew", "cask", "install"]
-
-[tasks.update-defs]
-    cmds = [
-        ["brew", "update"],
-    ]
-
-[tasks.fonts]
-    cmds = [
-        ["brew", "tap", "caskroom/fonts"],
-        ["@cask-install", "font-hack"],
-        ["@cask-install", "font-fira-code"],
-        ["@cask-install", "font-fira-mono-for-powerline"],
-    ]
-
-[tasks.bootstrap]
-    deps = ["default", "update-defs", "fonts"]
-    cmds = [
-        ["@cask-install", 
-            "iterm2",
-            "spectacle",
-            "dropbox",
-            "dash",
-            "vagrant",
-            "itsycal",
-            "jumpcut",
-            "virtualbox",
-            "slack",
-        ],
-        ["@install",
-            "git",
-            "jq",
-            "htop-osx",
-            "imagemagick",
-            "pgcli",
-            "the_silver_searcher",
-            "tree",
-            "unrar",
-            "wget",
-            "bash-completion",
-            "chruby",
-            "ruby-install",
-        ]
-    ]
-
 [tasks.default]
     links = [
-        [".bash_profile"],
-        [".bash_profile_osx"],
         [".bash_aliases"],
+        [".bash_profile"],
+        [".bash_profile_linux"],
+        [".bash_profile_osx"],
+        [".Brewfile"],
         [".gitconfig"],
-        [".gitignore_global"],
+        [".gitignore_global"]
     ]
 
 
