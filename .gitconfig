@@ -34,3 +34,7 @@
 	ff = only
 [init]
 	defaultBranch = main
+[github]
+	user = nirev
+[credential]
+	helper = osxkeychain
