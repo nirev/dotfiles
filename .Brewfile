@@ -135,6 +135,5 @@ cask "xquartz"
 cask "iterm2"
 # unrar and rar
 cask "rar"
-
-
 cask "visual-studio-code"
+cask "gpg-suite"
