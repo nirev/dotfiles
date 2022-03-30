@@ -118,7 +118,9 @@ cask "inkscape"
 cask "itsycal"
 cask "jumpcut"
 cask "kvirc"
-cask "latest"
+# app for keeping app versions up to date
+# brew cask is failing for now
+#cask "latest"
 cask "ocenaudio"
 cask "macfuse"
 cask "qsyncthingtray"
@@ -133,3 +135,6 @@ cask "xquartz"
 cask "iterm2"
 # unrar and rar
 cask "rar"
+
+
+cask "visual-studio-code"
