@@ -165,7 +165,7 @@ if [ "$(uname)" == "Darwin" ]; then
     # Do something under Mac OS X platform
     source ~/.bash_profile_osx
 else
-		source ~/.bash_profile_linux
+	source ~/.bash_profile_linux
 fi
 
 # configure GO
@@ -190,6 +190,7 @@ export KERL_BUILD_DOCS=yes
 export KERL_DOC_TARGETS=chunks
 
 export PATH="$HOME/bin:$PATH"
+export PATH="$PATH:${HOME}/.dotfiles/bin"
 export PATH="$PATH:$HOME/.local/bin"
 
 source $HOME/.asdf/asdf.sh
