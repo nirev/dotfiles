@@ -1,14 +1,20 @@
 #!/usr/bin/env bash
 
 ## install homemaker 
-HOMEMAKER_TGZ="homemaker_darwin_amd64.tar.gz"
+UNAME_MACHINE="$(/usr/bin/uname -m)"
+if [[ "$UNAME_MACHINE" == "arm64" ]]; then
+  HOMEMAKER_TGZ="homemaker_darwin_arm64.tar.gz"    
+else
+  HOMEMAKER_TGZ="homemaker_darwin_amd64.tar.gz"
+fi
 
-curl -fsSL https://github.com/FooSoft/homemaker/releases/latest/download/${HOMEMAKER_TGZ} -O && \
+curl -fsSL https://github.com/nirev/homemaker/releases/latest/download/${HOMEMAKER_TGZ} -O && \
     tar -xzf ${HOMEMAKER_TGZ} && \
     mkdir -p ~/bin && \
     mv homemaker ~/bin/homemaker && \
     rm -rf ${HOMEMAKER_TGZ}
 
+## install dotfiles
 SCRIPTPATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DOTFILES_PATH="${SCRIPTPATH}/../"
 
