@@ -8,6 +8,8 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "superfly/tap"
+tap "johanhaleby/kubetail"
+tap "derailed/k9s"
 tap "gromgit/fuse"
 
 brew "act"
@@ -101,6 +103,9 @@ brew "d12frosted/emacs-plus/emacs-plus@27"
 brew "dopplerhq/cli/doppler", link: false
 brew "heroku/brew/heroku"
 brew "superfly/tap/flyctl"
+brew "kubectl"
+brew "kubetail"
+brew "k9s"
 
 cask "1password-cli"
 cask "android-sdk"
