@@ -143,3 +143,16 @@ cask "iterm2"
 cask "rar"
 cask "visual-studio-code"
 cask "gpg-suite"
+
+# notes from iPad
+mas "GoodNotes", id: 1444383602
+# more notes
+mas "The Journalist", id: 764147223
+mas "NextDNS", id: 1464122853
+# for unzipping files in finder
+mas "The Unarchiver", id: 425424353
+mas "Trello", id: 1278508951
+mas "PhotoSweeper", id: 463362050
+mas "Telegram", id: 747648890
+# the better VPN
+mas "Tailscale", id: 1475387142
