@@ -31,7 +31,6 @@ brew "little-cms2"
 brew "qt"
 brew "poppler"
 brew "diff-pdf"
-brew "gromgit/fuse/encfs-mac"
 brew "f3"
 brew "gobject-introspection"
 brew "harfbuzz"
@@ -129,7 +128,6 @@ cask "kvirc"
 # brew cask is failing for now
 #cask "latest"
 cask "ocenaudio"
-cask "macfuse"
 cask "qsyncthingtray"
 cask "session-manager-plugin"
 cask "simple-comic"
@@ -144,11 +142,12 @@ cask "iterm2"
 cask "rar"
 cask "visual-studio-code"
 cask "gpg-suite"
+# encfs
+cask "macfuse"
+brew "gromgit/fuse/encfs-mac"
 
 # notes from iPad
 mas "GoodNotes", id: 1444383602
-# more notes
-mas "The Journalist", id: 764147223
 mas "NextDNS", id: 1464122853
 # for unzipping files in finder
 mas "The Unarchiver", id: 425424353
