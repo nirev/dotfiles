@@ -8,4 +8,16 @@ then
   chsh -s /bin/bash nirev
 fi
 
+if [ ! -d "$HOME/.asdf" ]; then
+    echo "--> Installing asdf";
+    git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.9.0
+fi
+echo "--> Updating asdf";
+$HOME/.asdf/bin/asdf update
+echo "--> Installing asdf plugins";
+for plugin in elixir erlang nodejs ruby python; do
+  $HOME/.asdf/bin/asdf plugin add $plugin; 
+done
+$HOME/.asdf/bin/asdf plugin update --all
+
 script/install-vscode-extensions

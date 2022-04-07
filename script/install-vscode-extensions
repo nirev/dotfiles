@@ -9,12 +9,13 @@ fi
 
 EXTENSIONS="$(code --list-extensions)"
 
+echo "--> Installing VScode extensions";
 for EXTENSION in $(cat $(dirname $0)/../vscode-extensions)
 do
   if echo "$EXTENSIONS" | grep -q "$EXTENSION"
   then
     echo "Extension '$EXTENSION' is already installed."
   else
-    code --install-extension "$EXTENSION"
+    code --install-extension --force "$EXTENSION"
   fi
 done
