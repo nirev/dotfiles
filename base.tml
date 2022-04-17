@@ -6,5 +6,7 @@
         [".bash_profile_osx"],
         [".Brewfile"],
         [".gitconfig"],
-        [".gitignore_global"]
+        [".gitignore_global"],
+        [".default-npm-packages"],
+        [".default-python-packages"]
     ]
