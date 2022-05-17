@@ -196,6 +196,10 @@ export PATH="$PATH:$HOME/.local/bin"
 source $HOME/.asdf/asdf.sh
 source $HOME/.asdf/completions/asdf.bash
 
+if [ -f $HOME/.asdf/plugins/java/set-java-home.bash ]; then
+  source $HOME/.asdf/plugins/java/set-java-home.bash
+fi
+
 ############################
 # Aliases
 ############################

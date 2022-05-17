@@ -8,5 +8,6 @@
         [".gitconfig"],
         [".gitignore_global"],
         [".default-npm-packages"],
-        [".default-python-packages"]
+        [".default-python-packages"],
+        [".asdfrc"],
     ]
