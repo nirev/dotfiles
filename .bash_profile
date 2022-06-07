@@ -157,16 +157,10 @@ function pdf.like_scanned () {
 #export SAL_GTK_USE_PIXMAPPAINT=1
 
 export EDITOR=vim
-export GIT_AUTHOR_EMAIL=nirev@taming-chaos.com
-export GIT_AUTHOR_NAME='nirev'
-export GIT_COMMITTER_EMAIL=$GIT_AUTHOR_EMAIL
-export GIT_COMMITTER_NAME=$GIT_AUTHOR_NAME
-
 #export WINEARCH=win32
 #export FRASCATI_HOME=/home/nirev/apps/frascati-runtime-1.4
 
 if [ "$(uname)" == "Darwin" ]; then
-    # Do something under Mac OS X platform
     source ~/.bash_profile_osx
 else
 	source ~/.bash_profile_linux
@@ -185,7 +179,6 @@ shopt -s histappend;
 
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
-
 
 # enable shell history for iex
 export ERL_AFLAGS="-kernel shell_history enabled"
