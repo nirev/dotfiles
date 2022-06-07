@@ -180,21 +180,24 @@ shopt -s histappend;
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
 
-# enable shell history for iex
-export ERL_AFLAGS="-kernel shell_history enabled"
-# build erlang with docs
-export KERL_BUILD_DOCS=yes
-export KERL_DOC_TARGETS=chunks
-
 export PATH="$HOME/bin:$PATH"
 export PATH="$PATH:${HOME}/.dotfiles/bin"
 export PATH="$PATH:$HOME/.local/bin"
 
+# enable shell history for iex
+ERL_AFLAGS="-kernel shell_history enabled"
+
+source $HOME/.kerlrc
 source $HOME/.asdf/asdf.sh
 source $HOME/.asdf/completions/asdf.bash
 
 if [ -f $HOME/.asdf/plugins/java/set-java-home.bash ]; then
   source $HOME/.asdf/plugins/java/set-java-home.bash
+fi
+
+export GPG_TTY=$(tty)
+if [[ -n "$SSH_CONNECTION" ]]; then
+    export PINENTRY_USER_DATA="USE_CURSES=1"
 fi
 
 ############################

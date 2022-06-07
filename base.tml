@@ -10,4 +10,5 @@
         [".default-npm-packages"],
         [".default-python-packages"],
         [".asdfrc"],
+        [".kerlrc"]
     ]

@@ -1,0 +1,16 @@
+# WARNING fix odbc for mac m1
+# sudo ln -s $(brew --prefix unixodbc) /usr/local/odbc
+# sudo chown -R $(whoami) /usr/local/odbc/
+
+export SDKROOT=$(xcrun --show-sdk-path)
+export CFLAGS="-O2 -g -I$(brew --prefix unixodbc)/include" 
+export CPPFLAGS="-I$(brew --prefix unixodbc)/include -I$(brew --prefix libxslt)/include"
+export LDFLAGS="-L$(brew --prefix unixodbc)/lib -L$(brew --prefix libxslt)/lib"
+
+# build erlang with docs
+export KERL_BUILD_DOCS=yes
+export KERL_DOC_TARGETS=chunks
+export KERL_INSTALL_MANPAGES=yes
+
+export KERL_COLORIZE=0
+export KERL_CONFIGURE_OPTIONS="--with-wx-config=$(brew --prefix wxwidgets)/bin/wx-config --with-odbc=$(brew --prefix unixodbc) --with-dynamic-trace=dtrace --disable-native-libs"
