@@ -195,6 +195,10 @@ if [ -f $HOME/.asdf/plugins/java/set-java-home.bash ]; then
   source $HOME/.asdf/plugins/java/set-java-home.bash
 fi
 
+if [ -d $HOME/.rd/bin ]; then
+  export PATH="$PATH:${HOME}/.rd/bin"
+fi
+
 export GPG_TTY=$(tty)
 if [[ -n "$SSH_CONNECTION" ]]; then
     export PINENTRY_USER_DATA="USE_CURSES=1"
