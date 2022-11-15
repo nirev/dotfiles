@@ -185,7 +185,7 @@ export PATH="$PATH:${HOME}/.dotfiles/bin"
 export PATH="$PATH:$HOME/.local/bin"
 
 # enable shell history for iex
-ERL_AFLAGS="-kernel shell_history enabled"
+export ERL_AFLAGS="-kernel shell_history enabled -kernel shell_history_file_bytes 1024000"
 
 source $HOME/.kerlrc
 source $HOME/.asdf/asdf.sh
