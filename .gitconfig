@@ -21,7 +21,7 @@
     fupum =!git checkout master && git fetch origin master && git pull origin master
     fupuma =!git checkout main && git fetch origin main && git pull origin main
     rebasemaster = !branch=\"`git branch 2>/dev/null | grep \\* | awk '{ print $2 }'`\" && echo \"Rebasing $branch from master...\" && git fupum && git co $branch && git rebase master
-    rebasemain = !branch=\"`git branch 2>/dev/null | grep \\* | awk '{ print $2 }'`\" && echo \"Rebasing $branch from main...\" && git fupum && git co $branch && git rebase main
+    rebasemain = !branch=\"`git branch 2>/dev/null | grep \\* | awk '{ print $2 }'`\" && echo \"Rebasing $branch from main...\" && git fupuma && git co $branch && git rebase main
     cob = !git fetch origin && git co -b $1 origin/$1 && echo \"Checked out origin branch:\"
     next = !git tag --points-at | sed 's/step//' | awk '{print \"step\"$1+1}' | xargs git co && git log -1 --no-decorate || echo "already at last step"
 
