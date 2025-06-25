@@ -16,6 +16,7 @@ alias hideDesktopIcons='defaults write com.apple.finder CreateDesktop false; kil
 alias showDesktopIcons='defaults write com.apple.finder CreateDesktop true; killall Finder'
 
 export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
+export ANDROID_NDK_HOME="/opt/homebrew/share/android-ndk"
 
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
