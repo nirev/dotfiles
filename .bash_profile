@@ -37,7 +37,7 @@ function pre_prompt {
 	host=$(echo -n $HOSTNAME | sed -e "s/[\.].*//")
 	datenow=$(date "+%a, %d %b %y")
 	#let promptsize=$(echo -n "--($user@$host ddd, DD mmm YYYY)---(${PWD})---" | wc -c | tr -d " ")
-        let promptsize=$(echo -n "--(xx:dd)---(${PWD})---" | wc -c | tr -d " ")
+	let promptsize=$(echo -n "--(xx:dd)---(${PWD})---" | wc -c | tr -d " ")
 	let fillsize=${COLUMNS}-${promptsize}
 	fill=""
 	while [ "$fillsize" -gt "0" ]
