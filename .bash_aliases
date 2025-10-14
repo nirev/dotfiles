@@ -45,3 +45,11 @@ function telnyx_git {
 function asdf-update {
   asdf update && asdf plugin-update --all
 }
+
+alias b2b="docker compose -f docker-compose.local.yml exec app"
+alias b2b-up="docker compose -f docker-compose.local.yml up -d"
+alias b2b-down="docker compose -f docker-compose.local.yml down"
+alias b2b-test="b2b mix test"
+alias b2b-lint="b2b sh lint-it.sh"
+
+alias claude="/Users/nirev/.claude/local/claude"

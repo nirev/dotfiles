@@ -16,10 +16,10 @@
     st = status
     ci = commit
     co = checkout
-    b = branch -a
+    b = branch -lv
+    bc = git branch -lv | grep gone | cut -w -f2 | xargs git branch -D
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an, %cr)%Creset' --abbrev-commit --date=relative
-    fupum =!git checkout master && git fetch origin master && git pull origin master
-    fupuma =!git checkout main && git fetch origin main && git pull origin main
+    fetchprune = fetch --prune
     rebasemaster = !branch=\"`git branch 2>/dev/null | grep \\* | awk '{ print $2 }'`\" && echo \"Rebasing $branch from master...\" && git fupum && git co $branch && git rebase master
     rebasemain = !branch=\"`git branch 2>/dev/null | grep \\* | awk '{ print $2 }'`\" && echo \"Rebasing $branch from main...\" && git fupuma && git co $branch && git rebase main
     cob = !git fetch origin && git co -b $1 origin/$1 && echo \"Checked out origin branch:\"
