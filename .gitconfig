@@ -17,7 +17,7 @@
     ci = commit
     co = checkout
     b = branch -lv
-    bc = git branch -lv | grep gone | cut -w -f2 | xargs git branch -D
+    bc = !git branch -lv | grep gone | cut -w -f2 | xargs git branch -D
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an, %cr)%Creset' --abbrev-commit --date=relative
     fetchprune = fetch --prune
     rebasemaster = !branch=\"`git branch 2>/dev/null | grep \\* | awk '{ print $2 }'`\" && echo \"Rebasing $branch from master...\" && git fupum && git co $branch && git rebase master
