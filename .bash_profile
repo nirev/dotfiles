@@ -197,7 +197,7 @@ export ASDF_DATA_DIR=$HOME/.asdf
 export PATH="$ASDF_DATA_DIR/shims:$PATH"
 
 source $HOME/.kerlrc
-source $HOME/.asdf/completions/asdf.bash
+source <(asdf completion bash)
 
 if [ -f $HOME/.asdf/plugins/java/set-java-home.bash ]; then
   source $HOME/.asdf/plugins/java/set-java-home.bash
