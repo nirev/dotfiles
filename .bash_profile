@@ -187,13 +187,23 @@ export PATH="$PATH:$HOME/.local/bin"
 # enable shell history for iex
 export ERL_AFLAGS="-kernel shell_history enabled -kernel shell_history_file_bytes 1024000"
 
+
+############################
+# ASDF configuration
+############################
+# asdf is a tool manager for multiple programming languages
+# https://asdf-vm.com/
+export ASDF_DATA_DIR=$HOME/.asdf
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
+
 source $HOME/.kerlrc
-source $HOME/.asdf/asdf.sh
 source $HOME/.asdf/completions/asdf.bash
 
 if [ -f $HOME/.asdf/plugins/java/set-java-home.bash ]; then
   source $HOME/.asdf/plugins/java/set-java-home.bash
 fi
+############################
+
 
 if [ -d $HOME/.rd/bin ]; then
   export PATH="$PATH:${HOME}/.rd/bin"

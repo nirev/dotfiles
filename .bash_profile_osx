@@ -1,8 +1,10 @@
-export PATH="/usr/local/bin:${PATH}"
-export PATH="/opt/homebrew/bin:${PATH}"
+BREW_PREFIX=$(brew --prefix)
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  source $(brew --prefix)/etc/bash_completion
+export PATH="/usr/local/bin:${PATH}"
+export PATH="${BREW_PREFIX}/bin:${PATH}"
+
+if [ -f $BREW_PREFIX/etc/profile.d/bash_completion.sh ]; then
+  source $BREW_PREFIX/etc/profile.d/bash_completion.sh
 fi
 
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
@@ -16,12 +18,9 @@ alias hideDesktopIcons='defaults write com.apple.finder CreateDesktop false; kil
 alias showDesktopIcons='defaults write com.apple.finder CreateDesktop true; killall Finder'
 
 export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
-export ANDROID_NDK_HOME="/opt/homebrew/share/android-ndk"
+export ANDROID_NDK_HOME="${BREW_PREFIX}/share/android-ndk"
 
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-
-# heroku autocomplete setup
-HEROKU_AC_BASH_SETUP_PATH=/Users/nirev/Library/Caches/heroku/autocomplete/bash_setup && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH;
 
 eval "$(ssh-agent -s)"

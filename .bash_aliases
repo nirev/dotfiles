@@ -52,4 +52,3 @@ alias b2b-down="docker compose -f docker-compose.local.yml down"
 alias b2b-test="b2b mix test"
 alias b2b-lint="b2b sh lint-it.sh"
 
-alias claude="/Users/nirev/.claude/local/claude"
