@@ -1,4 +1,4 @@
-BREW_PREFIX=$(brew --prefix)
+BREW_PREFIX=/opt/homebrew
 
 export PATH="/usr/local/bin:${PATH}"
 export PATH="${BREW_PREFIX}/bin:${PATH}"
