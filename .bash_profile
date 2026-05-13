@@ -63,7 +63,7 @@ export smoothblue="\[\033[0;38;5;111m\]"
 # export turqoise="\[\033[0;38;5;50m\]"
 
 export red="\[\e[0;31m\]"
-# export coldblue="\[\e[1;34m\]"
+export coldblue="\[\e[1;34m\]"
 export yellow="\[\e[0;33m\]"
 export white="\[\e[0;37m\]"
 export smoothgreen="\[\e[0;32m\]"
@@ -78,8 +78,8 @@ function git_branch_name() {
 #PS1="${darkgrey}┌─(${coldblue}\$newPWD${darkgrey})─\${fill}─($red\$(date \"+%H:%M\")\
 #${darkgrey})───┐\n${darkgrey}└─(${smoothgreen}\u${lightgrey}@${smoothgreen}\h ${red}\$(git_branch_name)${yellow}\$${darkgrey})─>$white "
 
-PS1="${darkgrey}┌─($red\$(date \"+%H:%M\")${darkgrey})─(${smoothblue}\$newPWD${darkgrey})\
-\n${darkgrey}└─(${smoothgreen}\u${lightgrey}@${smoothgreen}\h ${red}\$(git_branch_name)${yellow}\$${darkgrey})─>$white "
+PS1="${coldblue}┌─($red\$(date \"+%H:%M\")${coldblue})─(${smoothblue}\$newPWD${coldblue})\
+\n${coldblue}└─(${smoothgreen}\u${lightgrey}@${smoothgreen}\h ${red}\$(git_branch_name)${yellow}\$${coldblue})─>$white "
 
 
 ############################
@@ -219,3 +219,10 @@ fi
 ############################
 
 source ~/.bash_aliases
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init.bash 2>/dev/null || :
+
+# load https://direnv.net/
+eval "$(direnv hook bash)"
