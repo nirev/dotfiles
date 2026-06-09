@@ -7,6 +7,9 @@ if [ -f $BREW_PREFIX/etc/profile.d/bash_completion.sh ]; then
   source $BREW_PREFIX/etc/profile.d/bash_completion.sh
 fi
 
+# worktrunk.dev
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init bash)"; fi
+
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"

@@ -10,5 +10,6 @@
         [".default-npm-packages"],
         [".default-python-packages"],
         [".asdfrc"],
-        [".kerlrc"]
+        [".kerlrc"],
+        ["${HM_DEST}/.config/worktrunk", "worktrunk"]
     ]
