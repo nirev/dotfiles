@@ -1,0 +1,31 @@
+[projects."github.com/SeatScouts/b2b"]
+approved-commands = [
+    "doppler setup -p b2b -c dev",
+    """
+cat > .env.local << 'ENVEOF'
+COMPOSE_PROJECT_NAME=b2b-{{ branch | sanitize | lower }}
+APP_PORT={{ branch | hash_port }}
+POSTGRES_PORT={{ ('db-' ~ branch) | hash_port }}
+OPENSEARCH_PORT={{ ('os-search-' ~ branch) | hash_port }}
+OPENSEARCH_METRICS_PORT={{ ('os-metrics-' ~ branch) | hash_port }}
+OPENSEARCH_DASHBOARDS_PORT={{ ('os-dashboard-' ~ branch) | hash_port }}
+POSTGRES_MCP_PORT={{ ('mcp-' ~ branch) | hash_port }}
+JAEGER_UI_PORT={{ ('jaeger-' ~ branch) | hash_port }}
+ENVEOF
+""",
+    "wt step copy-ignored",
+    "just --yes dev-destroy",
+    """
+cat > .env.local << 'ENVEOF'
+{%- set base = branch | hash_port %}
+COMPOSE_PROJECT_NAME=b2b-{{ branch | sanitize | lower }}
+APP_PORT={{ base }}
+POSTGRES_PORT={{ base + 1 }}
+OPENSEARCH_PORT={{ base + 2 }}
+OPENSEARCH_METRICS_PORT={{ base + 3 }}
+OPENSEARCH_DASHBOARDS_PORT={{ base + 4 }}
+JAEGER_UI_PORT={{ base + 5 }}
+TEST_PARTITION={{ base }}
+ENVEOF
+""",
+]

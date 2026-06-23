@@ -1,0 +1,6 @@
+[global]
+strict_env = true
+
+
+[whitelist]
+prefix = [ "/Users/nirev/work/", "~/work" ]

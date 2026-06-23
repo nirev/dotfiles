@@ -11,5 +11,6 @@
         [".default-python-packages"],
         [".asdfrc"],
         [".kerlrc"],
-        ["${HM_DEST}/.config/worktrunk", "worktrunk"]
+        ["${HM_DEST}/.config/worktrunk", "tools/worktrunk"],
+        ["${HM_DEST}/.config/direnv", "tools/direnv"]
     ]
