@@ -186,6 +186,7 @@ export PATH="$PATH:$HOME/.local/bin"
 
 # enable shell history for iex
 export ERL_AFLAGS="-kernel shell_history enabled -kernel shell_history_file_bytes 1024000"
+source $HOME/.kerlrc
 
 
 ############################
@@ -193,17 +194,23 @@ export ERL_AFLAGS="-kernel shell_history enabled -kernel shell_history_file_byte
 ############################
 # asdf is a tool manager for multiple programming languages
 # https://asdf-vm.com/
-export ASDF_DATA_DIR=$HOME/.asdf
-export PATH="$ASDF_DATA_DIR/shims:$PATH"
 
-source $HOME/.kerlrc
-source <(asdf completion bash)
+# export ASDF_DATA_DIR=$HOME/.asdf
+# export PATH="$ASDF_DATA_DIR/shims:$PATH"
 
-if [ -f $HOME/.asdf/plugins/java/set-java-home.bash ]; then
-  source $HOME/.asdf/plugins/java/set-java-home.bash
-fi
+# source <(asdf completion bash)
+
+# if [ -f $HOME/.asdf/plugins/java/set-java-home.bash ]; then
+#   source $HOME/.asdf/plugins/java/set-java-home.bash
+# fi
+
 ############################
 
+############################
+# mise configuration
+############################
+eval "$(mise activate bash)"
+############################
 
 if [ -d $HOME/.rd/bin ]; then
   export PATH="$PATH:${HOME}/.rd/bin"

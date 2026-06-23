@@ -1,5 +1,4 @@
 tap "burntsushi/ripgrep", "https://github.com/BurntSushi/ripgrep.git"
-tap "d12frosted/emacs-plus"
 tap "dopplerhq/cli"
 tap "heroku/brew"
 tap "homebrew/bundle"
@@ -157,3 +156,7 @@ mas "PhotoSweeper", id: 463362050
 mas "Telegram", id: 747648890
 # the better VPN
 mas "Tailscale", id: 1475387142
+
+
+#### devtools
+brew "mise"
