@@ -208,7 +208,6 @@ cask "macdown"                       # Open-source Markdown editor
 # --- Dev / infra GUIs ---
 cask "openlens"                      # Lens Kubernetes IDE (open build)
 cask "utm"                            # Virtual machines (QEMU front end)
-cask "android-sdk"                   # Android SDK
 cask "android-ndk"                   # Android native dev toolset
 cask "android-platform-tools"        # adb/fastboot and friends
 cask "raspberry-pi-imager"           # Flash OS images to microSD
@@ -238,7 +237,7 @@ cask "transmission"                  # BitTorrent client
 # --- Productivity & menu-bar utilities ---
 cask "itsycal"                        # Menu bar calendar
 cask "jumpcut"                        # Clipboard history manager
-cask "spectacle"                      # Window mover/resizer
+cask "rectangle"                      # Move/resize windows with shortcuts (successor to the discontinued Spectacle)
 cask "puremac"                        # App manager & system cleaner
 cask "aerial"                         # Apple TV aerial screensaver
 
