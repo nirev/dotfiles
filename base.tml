@@ -12,5 +12,6 @@
         [".asdfrc"],
         [".kerlrc"],
         ["${HM_DEST}/.config/worktrunk", "tools/worktrunk"],
-        ["${HM_DEST}/.config/direnv", "tools/direnv"]
+        ["${HM_DEST}/.config/direnv", "tools/direnv"],
+        ["${HM_DEST}/bin/pclaude", "bin/pclaude"]
     ]
